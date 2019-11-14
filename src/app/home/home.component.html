@@ -1,0 +1,8 @@
+<h1>Welcome {{currentUser.role}}</h1>
+<p>This page can be accessed by all authenticated users.</p>
+<div>
+  Current user from secure api end point:
+  <ul>
+    <li *ngIf="userFromApi">{{userFromApi.username}}</li>
+  </ul>
+</div>

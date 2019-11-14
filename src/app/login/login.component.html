@@ -1,0 +1,22 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <h1>Login</h1>
+  <div class="input-group mb-4">
+    <input type="text" id="username" class="form-control" placeholder="Username" [formControlName]="['username']" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" (focus)="onFocus()" (focusout)="onFocusLoss()"/>
+    <div *ngIf="submitted && f.username.errors" class="invalid-feedback mb-0">
+      <div *ngIf="f.username.errors.required">Please Enter Username</div>
+    </div>
+  </div>
+  <div class="input-group mb-4">
+    <input type="password" id="password" class="form-control" placeholder="Password" [formControlName]="['password']" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" (focus)="onFocusPwd()" (focusout)="onFocusLossPwd()" [formControlName]="['password']"/>
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback mb-0">
+      <div *ngIf="f.password.errors.required">Please Enter Password</div>
+    </div>
+  </div>
+  <!--<div class="form-group text-right">
+    <a href="#">Forgot Password?</a>
+  </div>-->
+  <div class="form-group text-center">
+    <button id="SigninBtn" class="btn btn-primary w-100 loginBtn" >Sign In</button>
+  </div>
+</form>
+
